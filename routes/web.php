@@ -23,6 +23,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::middleware(['user','auth'])->group(function(){
     Route::get('/editUser/{id}',[\App\Http\Controllers\profile::class,'Edit']);
     Route::post('updateUser',[\App\Http\Controllers\profile::class,'updateUser']);
+    Route::post('Delete/{id}',[\App\Http\Controllers\profile::class,'delete']);
     Route::view('main','User.main');
     Route::view('Chat','User.messages');
     Route::view('Profile','User.profile');
@@ -33,7 +34,7 @@ Route::get('Sign',function (){
 })->name("login");
 Route::post('Signing',[\App\Http\Controllers\SigninController::class,'onLogin']);
 
-Route::post('Delete/{id}',[\App\Http\Controllers\profile::class,'delete']);
+
 
 
 

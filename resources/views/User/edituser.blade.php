@@ -68,12 +68,12 @@
                         </select>
                         @error('gender') <span class="error text-red-600">{{ $message }}</span> @enderror
                     </div>
-
-                    <button type="submit" class="block w-full bg-yellow-400 hover:bg-yellow-300 p-4 rounded text-yellow-900 hover:text-yellow-800 transition duration-300">Save</button>
-
+                <div class="">
+                    <button type="submit" class="my-5 block w-full bg-green-400 hover:bg-yellow-300 p-3 rounded text-white font-bold text-lg hover:text-yellow-800 transition duration-300">Save</button>
+                </div>
                 </form>
             @else
-                <h2 class="text-5xl font-bold mb-10 text-gray-800 text-center">Sorry! No Student Available</h2>
+                <h2 class="text-5xl font-bold  text-gray-800 text-center">Sorry! No Student Available</h2>
             @endif
         </div>
 

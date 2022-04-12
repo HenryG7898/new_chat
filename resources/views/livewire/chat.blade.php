@@ -17,7 +17,7 @@
 
                     <li>
                         @foreach($users as $user)
-                            @if ($user->id != auth()->user()->id)
+                            @if ($user->id != auth()->user()->id && $user->user_type != 'admin')
 
 
                             @php
@@ -33,15 +33,17 @@
                             <div class="w-full pb-2">
                                 <div class="flex justify-between">
                                     <span class="block ml-2 font-semibold text-base text-gray-600 ">{{$user->first_nm." ".$user->last_nm}}
-                                        @if($user->is_online == true)
+                                        @if($user->is_online === true)
                                             <span class="connected text-green-500 ml-2" >
                             <svg width="6" height="6">
                                 <circle cx="3" cy="3" r="3" fill="currentColor" color="green"></circle>
+                            </svg>
                                     @endif</span>
                                     @if(filled($not_seen))
-                                    <span class="block ml-2 text-sm text-gray-600">{{$not_seen->count()}}</span>
+                                    <span class="rounded-full p-1 text-sm bg-green-600">{{$not_seen->count()}}</span>
                                         @endif
                                 </div>
+{{--                                @if(filled($allmessages))--}}
 {{--                                @foreach ($lastest as $item)--}}
 {{--                                    @if ($item->id == $item->user_id)--}}
                                         <span class="block ml-2 text-sm text-gray-600">Hello World!</span>

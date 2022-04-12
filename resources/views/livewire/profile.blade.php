@@ -134,8 +134,9 @@
                                 <p style="margin-bottom: -10px ">If want to delete your account click the button below, Notice: before clicking the button you wont able to recover your account.</p>
 
                             </div>
-                            <form action="{{ url('Delete') }}" method="post">
-                            <a href="{{url('delete'.Auth::user()->id)}}" style="text-decoration: none; font-size: 25px"> <button
+                            <form action="{{ url('Delete/'.Auth()->user()->id) }}" method="post">
+                                @csrf
+                            <a  style="text-decoration: none; font-size: 25px"> <button type="submit"
                                     class="block w-full bg-blue-800 mt-6 text-white hover:text-black text-sm transition-all font-semibold rounded-lg hover:bg-blue-500  focus:outline-none focus:shadow-outline focus:bg-white hover:shadow-xs p-3 my-4">
                                     Delete Account</button></a>
                             </form>

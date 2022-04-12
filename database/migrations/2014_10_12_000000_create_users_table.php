@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_nm');
             $table->string('username');
             $table->string('DOB');
+            $table->string('user_type')->default('user');
             $table->string('gender');
             $table->string('phone_nbr');
             $table->string('profile_img')->default('/public/default.png');

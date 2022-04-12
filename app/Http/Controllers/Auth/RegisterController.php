@@ -58,6 +58,13 @@ class RegisterController extends Controller
             'phone_nbr' => ['required', 'numeric'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
+        ],[
+            'first_nm.required' => 'The First Name field is required.',
+            'username.required' => 'The Username field is required.',
+            'last_nm.required' => 'The Last Name field is required.',
+            'gender.required' => 'The Gender field is required.',
+            'DOB.required' => 'The Date Of Birth field is required.',
+            'phone_nbr.required' => 'The Phone Number field is required.',
         ]);
     }
 
